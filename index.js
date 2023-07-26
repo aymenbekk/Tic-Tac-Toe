@@ -23,6 +23,7 @@ const DisplayController = (() => {
     }
   };
   const displayWinCard = (winner) => {
+    console.log(GameController.currentMode);
     const winCard = document.querySelector(".win-card");
     const winnerText = document.querySelector("h1");
     winnerText.textContent = winner;
@@ -102,7 +103,7 @@ const GameBoard = (() => {
 })();
 const GameController = (() => {
   //raha module hadi GameController tan sema kayna wahda sema ghi matkhafch reinitialisation a chque fois
-
+  console.log("sema hna el probleme");
   let currentMode = "playerXplayer";
   let numberOfTurnsPlayed = 0;
   const player1 = Player("aymen");
@@ -343,6 +344,7 @@ const initia = () => {
 
   const winCard = document.querySelector(".win-card");
   winCard.addEventListener("click", function () {
+    console.log(GameController.currentMode);
     winCard.classList.remove("active");
     GameBoard.initiArray();
     DisplayController.restart();
